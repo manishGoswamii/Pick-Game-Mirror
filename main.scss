@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+*
+{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+html
+{
+    height:100%;
+}
+
+body
+{
+    font-family: 'Nunito', sans-serif;
+    height:100%;
+    background-image:linear-gradient(to top left,#753682, #bf2e34);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.main
+{
+    height:70%;
+    width:50%;
+    border-radius: 8px;
+    display: flex;
+    background-color:#d5a4af;
+    box-shadow: 0 3rem 5rem rgba(0,0,0,0.25);
+    position: relative;
+    &__player
+    {
+        width:50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        border-right: 1px solid rgba(0, 0, 0, 0.17);
+        h1
+        {
+            font-size:3rem;
+            color: #bf2e56;
+
+        }
+        h2
+        {
+            font-size: 2rem;
+        }
+
+        h3
+        {
+            font-size:1.5rem;
+            font-weight:normal;
+        }
+
+        h4
+        {
+            font-size:0.8rem;
+            font-weight: normal;
+
+        }
+        
+
+        .info
+        {
+            text-align: center;
+            
+            h1
+            {
+                padding-top:0.8rem;
+            }
+        }
+
+        .current-score
+        {
+            text-align: center;
+            padding:1rem 3rem;
+            background-color: #bf2e56;
+            border-radius: 10px;
+            color:white;
+
+            h3
+            {
+                padding-top:0.5rem;
+            }
+
+
+        }
+
+        &:hover 
+        {
+            background-color:rgba(255, 255, 255, 0.157);
+            cursor:none;
+        }
+    }
+
+
+
+    &__button
+    {   
+        position:absolute;
+        font-size: 0.9rem;
+        font-weight:bold;
+        padding:0.5rem 1.4rem;
+        transform: translate(-50%,-50%);
+        background-color: #f9f2fa94;
+        border-radius: 2rem;
+        text-align: center;  
+        z-index: 10;
+        border:none;        
+        &:enabled
+        {
+            cursor: pointer;
+
+        }
+
+        &:disabled
+        {
+            cursor:auto;
+        }
+        
+        
+    }
+
+    &__newgame
+    {
+        top:10%;
+        left:50%;
+    }
+    &__rolldice
+    {
+        top:72%;
+        left:50%;
+    }
+
+    &__hold
+    {
+        top:83%;
+        left:50%;
+    }
+
+    &__image
+    {
+        width:13%;
+        height: 18%;
+        border-radius: 3px;
+        position: absolute;
+        transform: translate(-50%,-50%);
+        top:40%;
+        left:50%;
+        z-index: 10; 
+        display: none;       
+    }
+
+    &__overlayLayer
+    {
+        width:100%;
+        height:100%;
+        background-color: rgba(0, 0, 0, 0.176);
+        position:absolute;
+        z-index:5;
+        display: none;
+
+        // &--second
+        // {
+        //     right:0;
+        // }
+    }
+
+}
+
+.section
+{
+    width:50%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    color:white;
+    &__turn
+    {
+        width:40%;
+        font-size: 1.4rem;
+        font-weight: bold;
+        text-align: center;
+        position: absolute;
+
+        &--first
+        {
+            display: none;
+            left:0;
+            text-align: left;
+        }
+        &--second
+        {
+            display:none;
+            right: 0;
+            text-align: right;
+        }
+    }
+
+}
+
+.footer
+{
+    width:50%;
+    display:flex;
+    justify-content: space-around;
+    &__btn
+    {
+        font-size:1.3rem;
+        font-weight:bold;
+        color:white;
+        background-color: #bf2e56;
+        width:fit-content;
+        padding:0.8rem 0.9rem;
+        border-radius: 5px;
+        text-align: center;
+
+        &:hover
+        {
+            color:#bf2e56;
+            background-color: white;
+            cursor:pointer;
+        }
+    }
+}
+
+
+.visible
+{
+    display:block;
+}
+.hide
+{
+    display:none;
+
+}
+.half-width
+{
+    width:50%;
+}
+.hovered
+{
+    background-color: #b2adb25c;
+
+}
+//
+.right-side
+{
+    right:0;
+    
+}
+
+
+@keyframes gotOne
+{
+    0%{
+        transform: translate(-50%,-50%) rotate(0) scale(1);
+        
+    }
+    50%
+    {
+        transform: translate(-50%,-50%) rotate(-180deg) scale(1.5);
+
+    }
+
+    100%
+    {
+        transform: translate(-50%,-50%) rotate(-360deg) scale(1);
+
+    }
+}
+
+.animationForOne
+{
+    animation-play-state: running;
+    animation-name:gotOne;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-fill-mode: none;
+    animation-iteration-count:1;
+}
+
+
+.winner-background
+{
+    background-color:rgba(0, 0, 0, 0.415);
+}

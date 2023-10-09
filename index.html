@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pick Game</title>
+    <link href="main.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="main">
+        <div class="main__player main__player--first">
+            <div class="info">
+                <h2 class="name">PLAYER 1</h2>
+                <h1 class="score">0</h1>
+            </div>
+            
+            <div class="current-score">
+                <h4>CURRENT</h4>
+                <h3 class="total-score">0</h3>
+            </div>
+        </div>
+
+        <div class="main__player main__player--second">
+            <div class="info">
+                <h2 class="name">PLAYER 2</h2>
+                <h1 class="score">0</h1>
+            </div>
+            
+            <div class="current-score">
+                <h4>CURRENT</h4>
+                <h3 class="total-score">0</h3>
+            </div>
+        </div>
+
+        <button class="main__button main__newgame">
+            🔄 NEW GAME
+        </button>
+
+
+        <img src="images/dice-1.png" alt="dice" class="main__image main__diceImage"/>
+
+        <button class="main__button main__rolldice">
+            &#127922; ROLL DICE
+        </button>
+        
+        <button class="main__button main__hold">
+            🎯 HOLD
+        </button>
+
+        <div class="main__overlayLayer main__overlayLayer--first">
+
+        </div>
+
+        <!-- <div class="main__overlayLayer main__overlayLayer--second">
+
+        </div> -->
+
+    </div>
+
+    <section class="section">
+        <div class="section__turn section__turn--first">
+            TURN 👆.<br/> HOLD 🔔 AND ROLL &#127922;.
+        </div>
+        <div class="section__turn section__turn--second">
+             TURN ☝. <br/>
+             HOLD 🔔 AND ROLL &#127922;.
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__btn footer__btn--start">
+            START
+        </div>
+        <div class="footer__btn footer__btn--exit">
+            EXIT
+        </div>
+    </footer>
+    <script src="script2.js"></script>
+</body>
+</html>
