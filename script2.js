@@ -141,7 +141,7 @@ function showAnimation()
 
 function checkWinner(player)
 {
-    if(+player.totalScore.textContent +  +player.currentScore.textContent >=10)
+    if(+player.totalScore.textContent +  +player.currentScore.textContent >=30)
     {   
         player.totalScore.textContent = "WINNER!";
         player.playerBlock.classList.add("winner-background");
@@ -191,8 +191,7 @@ newgameBtn.addEventListener("click", function()
 
 rolldiceBtn.addEventListener("click", function()
 {   
-    currentPlayer=(players[0].active)?players[0]:players[1];
-
+    currentPlayer=players[0].active?players[0]:players[1];
     randomNumber = Math.floor(Math.random() * 6) + 1;
 
     showDiceImage(randomNumber);
@@ -208,20 +207,26 @@ rolldiceBtn.addEventListener("click", function()
             rolldiceBtn.disabled=false;
             holdBtn.disabled=false;
             switchPlayers();
-
+            diceImage.classList.remove("visible");
         },2000);
 
     }
     else
     {
         addScore(currentPlayer,randomNumber);
-        checkWinner(currentPlayer);
+        setTimeout(function()
+        {   
+            diceImage.classList.remove("visible");
+            checkWinner(currentPlayer);
+            switchPlayers();
+        },1000);
     }
 
 });
 
 holdBtn.addEventListener("click",function()
 {
+    currentPlayer=players[0].active?players[0]:players[1];
     addScore(currentPlayer);
     scoreZero(currentPlayer); 
     switchPlayers();
