@@ -114,11 +114,14 @@ function switchPlayers()
         players[0].active=false;
         players[1].active=true;
         overlay.classList.remove("right-side");
+        overlay.classList.add("left-side");
         return;
     }
     players[0].active=true;
     players[1].active=false;
     overlay.classList.add("right-side");
+    overlay.classList.remove("left-side");
+
 
 
 }

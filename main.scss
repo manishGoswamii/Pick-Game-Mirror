@@ -31,6 +31,16 @@ body
     background-color:#d5a4af;
     box-shadow: 0 3rem 5rem rgba(0,0,0,0.25);
     position: relative;
+    @media(max-width: 25rem)
+    {
+        width:100%;
+        height:60%;
+        justify-content: space-around;
+    }
+    @media(max-width:40rem)
+    {
+        width:100%;        
+    }
     &__player
     {
         width:50%;
@@ -40,21 +50,36 @@ body
         justify-content: space-around;
         align-items: center;
         border-right: 1px solid rgba(0, 0, 0, 0.17);
+        @media(max-width:25rem)
+        {
+            width:45%;
+        }
+
         h1
         {
             font-size:3rem;
             color: #bf2e56;
 
+            @media(max-width: 25rem)
+            {
+               font-size: 2rem;
+            }
         }
+        
         h2
         {
             font-size: 2rem;
+            @media(max-width: 25rem)
+            {
+               font-size: 1.5rem;
+            }
         }
 
         h3
         {
             font-size:1.5rem;
             font-weight:normal;
+            
         }
 
         h4
@@ -83,6 +108,10 @@ body
             border-radius: 10px;
             color:white;
 
+            @media(max-width: 25rem)
+            {
+               padding:0.5rem 1.4rem;
+            }
             h3
             {
                 padding-top:0.5rem;
@@ -111,7 +140,13 @@ body
         border-radius: 2rem;
         text-align: center;  
         z-index: 10;
-        border:none;        
+        border:none;
+        
+        @media(max-width: 25rem)
+        {
+           font-size:0.7rem;
+           padding:0.3rem 1rem;
+        }
         &:enabled
         {
             cursor: pointer;
@@ -129,18 +164,56 @@ body
     &__newgame
     {
         top:10%;
-        left:50%;
+        left:50%;        
+
     }
     &__rolldice
     {
         top:72%;
         left:50%;
+
+        @media(max-width: 25rem)
+        {
+            top:94%;
+            left:30%;
+        }
+        @media(max-width:40rem)
+        {
+            top:90%;
+            left:30%;
+        }
+
+        @media (max-width: 74rem)
+        {
+            top:95%;
+            left:50%;
+            
+        }
     }
 
     &__hold
     {
         top:83%;
         left:50%;
+        @media(max-width: 25rem)
+        {
+            top:100%;
+            left:70%;
+            border-radius: 30px;
+            
+        }
+        @media(max-width:40rem)
+        {
+            top:90%;
+            left:70%;
+        }
+        
+        @media (max-width: 74rem)
+        {
+            top:88%;
+            left:50%;
+            
+        }
     }
 
     &__image
@@ -153,7 +226,29 @@ body
         top:40%;
         left:50%;
         z-index: 10; 
-        display: none;       
+        display: none;   
+        
+        @media(max-width: 25rem)
+        {
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            border-radius:10px;
+            width: 20%;
+            height: 15%;
+        }
+        @media(max-width:40rem)
+        {
+            width:15%; 
+            heigth:3%;   
+        }
+        @media(max-width:70rem)
+        {
+            width:17%; 
+            heigth:3%;
+               
+        }
+        
     }
 
     &__overlayLayer
@@ -164,13 +259,11 @@ body
         position:absolute;
         z-index:5;
         display: none;
-
-        // &--second
-        // {
-        //     right:0;
-        // }
+        
+       
     }
 
+   
 }
 
 .section
@@ -219,7 +312,10 @@ body
         padding:0.8rem 0.9rem;
         border-radius: 5px;
         text-align: center;
-
+        @media(max-width: 25rem)
+        {
+           font-size: 1rem;
+        }
         &:hover
         {
             color:#bf2e56;
@@ -242,7 +338,9 @@ body
 .half-width
 {
     width:50%;
+    
 }
+
 .hovered
 {
     background-color: #b2adb25c;
@@ -253,6 +351,11 @@ body
 {
     right:0;
     
+}
+
+.left-side
+{
+    left:0;
 }
 
 
